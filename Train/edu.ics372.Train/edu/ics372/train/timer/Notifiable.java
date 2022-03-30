@@ -1,4 +1,4 @@
-package edu.ics372.Train.timer;
+package edu.ics372.train.timer;
 
 /**
  * An entity that can be notified of timing events

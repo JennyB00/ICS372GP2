@@ -1,4 +1,4 @@
-package edu.ics372.Train.timer;
+package edu.ics372.train.timer;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
