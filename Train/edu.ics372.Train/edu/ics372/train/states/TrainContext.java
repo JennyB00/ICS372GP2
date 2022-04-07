@@ -1,5 +1,7 @@
 package edu.ics372.train.states;
 
+import edu.ics372.train.display.TrainDisplay;
+
 /**
  * @author Jennifer Bruno
  *
@@ -7,6 +9,8 @@ package edu.ics372.train.states;
 public class TrainContext {
 	private static TrainContext train;
 	private TrainState currentState;
+	
+	private TrainDisplay display;
 
 	/**
 	 * Private constructor for singleton
@@ -51,5 +55,45 @@ public class TrainContext {
 
 	public void onStartTransport() {
 		currentState.onStartTransport();
+	}
+
+	public TrainDisplay getDisplay() {
+		return display;
+	}
+
+	public void setDisplay(TrainDisplay display) {
+		this.display = display;
+	}
+
+	public TrainState getCurrentState() {
+		return currentState;
+	}
+
+	public void setCurrentState(TrainState currentState) {
+		this.currentState = currentState;
+	}
+	
+	public void showAccelerating() {
+		display.showAccelerating();
+	}
+	
+	public void showDeaccelerating() {
+		display.showDeaccelerating();
+	}
+	
+	public void showDoorOpening() {
+		display.showDoorOpening();
+	}
+	
+	public void showDoorClosing() {
+		display.showDoorClosing();
+	}
+	
+	public void showDoorReopening() {
+		display.showDoorReopening();
+	}
+	
+	public void showTimeLeft(int time) {
+		display.showTimeLeft(time);
 	}
 }

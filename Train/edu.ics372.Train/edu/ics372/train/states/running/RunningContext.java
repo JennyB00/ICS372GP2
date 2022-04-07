@@ -1,6 +1,7 @@
 package edu.ics372.train.states.running;
 
 import edu.ics372.train.states.TrainContext;
+import edu.ics372.train.states.TransportState;
 
 /**
  * @author Jennifer Bruno
@@ -27,7 +28,7 @@ public class RunningContext {
 
 	public void initialize() {
 		// current = accelerating
-		currentState.enter();
+	//	currentState.enter(); //commented out for now, throwing null
 	}
 
 	public void changeState(RunningState nextState) {
