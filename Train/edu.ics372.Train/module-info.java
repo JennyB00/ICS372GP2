@@ -1,5 +1,5 @@
 module edu.ics372.Train {
-	
+
 	requires javafx.controls;
 	requires javafx.base;
 	requires java.desktop;
