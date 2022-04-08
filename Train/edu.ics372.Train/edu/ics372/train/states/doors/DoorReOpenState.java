@@ -1,26 +1,35 @@
 package edu.ics372.train.states.doors;
 
+import edu.ics372.train.states.PassengerExchangeState;
 import edu.ics372.train.states.TrainContext;
 import edu.ics372.train.timer.Timer;
 
-public class DoorClosedState extends DoorState {
-	private static DoorClosedState instance;
+public class DoorReOpenState extends DoorState {
+	private static DoorReOpenState instance;
 
-	private DoorClosedState() {
+	/**
+	 * 
+	 */
+	private DoorReOpenState() {
 		instance = this;
 	}
 
-	public static DoorClosedState instance() {
+	/**
+	 * 
+	 * 
+	 * @return the object
+	 */
+	public static DoorReOpenState instance() {
 		if (instance == null) {
-			instance = new DoorClosedState();
+			instance = new DoorReOpenState();
 		}
 		return instance;
 	}
 
 	@Override
 	public void enter() {
-		timer = new Timer(this, 3);
-		// TODO show door closed
+		timer = new Timer(this, 8);
+		// TODO show door re open
 		TrainContext.instance().showTimeLeft(timer.getTimeValue());
 	}
 
@@ -38,6 +47,8 @@ public class DoorClosedState extends DoorState {
 
 	@Override
 	public void onTimerRunsOut() {
-		TrainContext.instance().onStartTransport();
+		TrainContext.instance().showTimeLeft(0);
+		PassengerExchangeState.instance().changeState(DoorClosingState.instance());
 	}
+
 }

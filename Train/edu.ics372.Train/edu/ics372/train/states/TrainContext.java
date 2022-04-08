@@ -9,7 +9,7 @@ import edu.ics372.train.display.TrainDisplay;
 public class TrainContext {
 	private static TrainContext train;
 	private TrainState currentState;
-	
+
 	private TrainDisplay display;
 
 	/**
@@ -30,13 +30,6 @@ public class TrainContext {
 			train = new TrainContext();
 		}
 		return train;
-	}
-
-	/**
-	 * Initializes the train context to the start state, start moving first
-	 */
-	public void initialize() {
-
 	}
 
 	/**
@@ -72,27 +65,27 @@ public class TrainContext {
 	public void setCurrentState(TrainState currentState) {
 		this.currentState = currentState;
 	}
-	
+
 	public void showAccelerating() {
 		display.showAccelerating();
 	}
-	
+
 	public void showDeaccelerating() {
 		display.showDeaccelerating();
 	}
-	
+
 	public void showDoorOpening() {
 		display.showDoorOpening();
 	}
-	
+
 	public void showDoorClosing() {
 		display.showDoorClosing();
 	}
-	
+
 	public void showDoorReopening() {
 		display.showDoorReopening();
 	}
-	
+
 	public void showTimeLeft(int time) {
 		display.showTimeLeft(time);
 	}

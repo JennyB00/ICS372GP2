@@ -1,6 +1,6 @@
 package edu.ics372.train.states;
 
-import edu.ics372.train.states.running.RunningContext;
+import edu.ics372.train.states.running.RunningState;
 
 /**
  * @author Jennifer Bruno
@@ -8,6 +8,7 @@ import edu.ics372.train.states.running.RunningContext;
  */
 public class TransportState extends TrainState {
 	private static TransportState state;
+	private RunningState currentState;
 
 	/**
 	 * 
@@ -24,18 +25,25 @@ public class TransportState extends TrainState {
 
 	@Override
 	public void enter() {
-		RunningContext.instance().initialize();
+		// current = accelerating
+		// currentState.enter();
 	}
 
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
-
+		currentState.leave();
+		currentState = null;
 	}
 
 	@Override
 	public void onExchangePassengers() {
 		TrainContext.instance().changeState(PassengerExchangeState.instance());
+	}
+
+	public void changeState(RunningState nextState) {
+		currentState.leave();
+		currentState = nextState;
+		currentState.enter();
 	}
 
 }
