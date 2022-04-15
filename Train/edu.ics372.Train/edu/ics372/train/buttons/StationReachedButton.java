@@ -8,16 +8,16 @@ import javafx.event.ActionEvent;
  * @author Arun Markandu 
  *
  */
-public class CloseButton extends GUIButton{
+public class StationReachedButton extends GUIButton{
 
-	public CloseButton(String string) {
+	public StationReachedButton(String string) {
 		super(string);
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
 		TrainContext.instance().showDoorClosing();
-		TrainContext.instance().showTimeLeft(0);
+		TrainContext.instance().showTimeLeft(6);
 		
 	}
 }

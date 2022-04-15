@@ -16,8 +16,8 @@ public class AccelarateButton extends GUIButton{
 
 	@Override
 	public void handle(ActionEvent event) {
-		TrainContext.instance().showAccelerating();
-		TrainContext.instance().showTimeLeft(0);
+		//TrainContext.instance().showAccelerating();
+		//TrainContext.instance().showTimeLeftMessage("0");
 		
 	}
 

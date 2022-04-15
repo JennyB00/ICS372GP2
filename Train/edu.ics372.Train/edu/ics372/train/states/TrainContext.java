@@ -66,25 +66,27 @@ public class TrainContext {
 		this.currentState = currentState;
 	}
 
-	public void showAccelerating() {
-		display.showAccelerating();
-	}
-
-	public void showDeaccelerating() {
-		display.showDeaccelerating();
-	}
 
 	public void showDoorOpening() {
-		display.showDoorOpening();
+		display.showStationReachingButton();
 	}
 
 	public void showDoorClosing() {
-		display.showDoorClosing();
+		display.showDoorObstructingButton();
 	}
 
 	public void showDoorReopening() {
-		display.showDoorReopening();
+		display.showStationReachedButton();
 	}
+	
+	public void showAccelerating() {
+		display.showAccelerating();
+	}
+	
+	public void showDeaccelerating() {
+		display.showDecelerating();
+	}
+
 
 	public void showTimeLeft(int time) {
 		display.showTimeLeft(time);

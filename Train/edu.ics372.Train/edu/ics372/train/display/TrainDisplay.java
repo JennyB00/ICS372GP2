@@ -8,16 +8,16 @@ package edu.ics372.train.display;
 public interface TrainDisplay {
 	public void setStatusMessage(String message);
 	
-	public void showAccelerating();
 	
-	public void showDeaccelerating();
+	public void showStationReachingButton();
 	
-	public void showDoorOpening();
+	public void showStationReachedButton();
 	
-	public void showDoorClosing();
-	
-	public void showDoorReopening();
+	public void showDoorObstructingButton();
 	
 	public void showTimeLeft(int time);
 	
+	public void showAccelerating();
+	
+	public void showDecelerating();
 }

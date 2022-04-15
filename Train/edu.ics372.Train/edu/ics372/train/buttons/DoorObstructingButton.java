@@ -8,16 +8,16 @@ import javafx.event.ActionEvent;
  * @author Arun Markandu
  *
  */
-public class ReopenButton extends GUIButton{
+public class DoorObstructingButton extends GUIButton{
 
-	public ReopenButton(String string) {
+	public DoorObstructingButton(String string) {
 		super(string);
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
 		TrainContext.instance().showDoorReopening();
-		TrainContext.instance().showTimeLeft(0);
+		TrainContext.instance().showTimeLeft(3);
 	}
 
 }

@@ -16,8 +16,8 @@ public class DeaccelerateButton extends GUIButton{
 
 	@Override
 	public void handle(ActionEvent event) {
-		TrainContext.instance().showDeaccelerating();;
-		TrainContext.instance().showTimeLeft(0);
+		//TrainContext.instance().showDeaccelerating();;
+		//TrainContext.instance().showTimeLeftMessage("0");
 		
 	}
 
