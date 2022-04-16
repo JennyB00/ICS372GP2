@@ -5,10 +5,10 @@ import javafx.event.ActionEvent;
 
 /**
  * 
- * @author Arun Markandu 
+ * @author Arun Markandu
  *
  */
-public class StationReachedButton extends GUIButton{
+public class StationReachedButton extends GUIButton {
 
 	public StationReachedButton(String string) {
 		super(string);
@@ -16,8 +16,8 @@ public class StationReachedButton extends GUIButton{
 
 	@Override
 	public void handle(ActionEvent event) {
-		TrainContext.instance().showDoorClosing();
-		TrainContext.instance().showTimeLeft(6);
-		
+//		TrainContext.instance().showDoorClosing();
+//		TrainContext.instance().showTimeLeft(6);
+		TrainContext.instance().onArrived();
 	}
 }

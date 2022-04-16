@@ -1,5 +1,6 @@
 package edu.ics372.train.states.running;
 
+import edu.ics372.train.states.TrainContext;
 import edu.ics372.train.states.TransportState;
 
 /**
@@ -30,7 +31,7 @@ public class CruisingState extends RunningState {
 
 	@Override
 	public void enter() {
-		// TODO show constant speed
+		TrainContext.instance().showCruising();
 	}
 
 	@Override

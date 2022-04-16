@@ -1,5 +1,6 @@
 package edu.ics372.train.states;
 
+import edu.ics372.train.states.running.AcceleratingState;
 import edu.ics372.train.states.running.RunningState;
 
 /**
@@ -25,8 +26,8 @@ public class TransportState extends TrainState {
 
 	@Override
 	public void enter() {
-		// current = accelerating
-		// currentState.enter();
+		currentState = AcceleratingState.instance();
+		currentState.enter();
 	}
 
 	@Override
@@ -38,6 +39,16 @@ public class TransportState extends TrainState {
 	@Override
 	public void onExchangePassengers() {
 		TrainContext.instance().changeState(PassengerExchangeState.instance());
+	}
+
+	@Override
+	public void onApproaching() {
+		currentState.onApproaching();
+	}
+
+	@Override
+	public void onArrived() {
+		currentState.onArrived();
 	}
 
 	public void changeState(RunningState nextState) {

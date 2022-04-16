@@ -29,7 +29,7 @@ public class DoorReOpenState extends DoorState {
 	@Override
 	public void enter() {
 		timer = new Timer(this, 8);
-		// TODO show door re open
+		TrainContext.instance().showDoorOpen();
 		TrainContext.instance().showTimeLeft(timer.getTimeValue());
 	}
 

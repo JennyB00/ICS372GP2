@@ -8,7 +8,7 @@ import javafx.event.ActionEvent;
  * @author Arun Markandu
  *
  */
-public class DoorObstructingButton extends GUIButton{
+public class DoorObstructingButton extends GUIButton {
 
 	public DoorObstructingButton(String string) {
 		super(string);
@@ -16,8 +16,9 @@ public class DoorObstructingButton extends GUIButton{
 
 	@Override
 	public void handle(ActionEvent event) {
-		TrainContext.instance().showDoorReopening();
-		TrainContext.instance().showTimeLeft(3);
+//		TrainContext.instance().showDoorReopening();
+//		TrainContext.instance().showTimeLeft(3);
+		TrainContext.instance().onObstruction();
 	}
 
 }

@@ -20,7 +20,7 @@ public class DoorClosedState extends DoorState {
 	@Override
 	public void enter() {
 		timer = new Timer(this, 3);
-		// TODO show door closed
+		TrainContext.instance().showDoorClosed();
 		TrainContext.instance().showTimeLeft(timer.getTimeValue());
 	}
 

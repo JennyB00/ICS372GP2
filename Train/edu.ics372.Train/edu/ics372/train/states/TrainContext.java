@@ -16,8 +16,8 @@ public class TrainContext {
 	 * Private constructor for singleton
 	 */
 	private TrainContext() {
-		currentState = TransportState.instance();
-		currentState.enter();
+		train = this;
+
 	}
 
 	/**
@@ -30,6 +30,11 @@ public class TrainContext {
 			train = new TrainContext();
 		}
 		return train;
+	}
+
+	public void initialize() {
+		currentState = TransportState.instance();
+		currentState.enter();
 	}
 
 	/**
@@ -50,6 +55,18 @@ public class TrainContext {
 		currentState.onStartTransport();
 	}
 
+	public void onApproaching() {
+		currentState.onApproaching();
+	}
+
+	public void onArrived() {
+		currentState.onArrived();
+	}
+
+	public void onObstruction() {
+		currentState.onObstruction();
+	}
+
 	public TrainDisplay getDisplay() {
 		return display;
 	}
@@ -66,32 +83,46 @@ public class TrainContext {
 		this.currentState = currentState;
 	}
 
-
 	public void showDoorOpening() {
-		display.showStationReachingButton();
+		display.showDoorOpening();
+	}
+
+	public void showDoorOpen() {
+		display.showDoorOpen();
 	}
 
 	public void showDoorClosing() {
-		display.showDoorObstructingButton();
+		display.showDoorClosing();
 	}
 
-	public void showDoorReopening() {
-		display.showStationReachedButton();
+	public void showDoorObstruciton() {
+		display.showDoorObstruction();
 	}
-	
+
+	public void showDoorClosed() {
+		display.showDoorClosed();
+	}
+
 	public void showAccelerating() {
 		display.showAccelerating();
 	}
-	
+
 	public void showDeaccelerating() {
 		display.showDecelerating();
 	}
 
+	public void showCruising() {
+		display.showConstantSpeed();
+	}
+
+	public void showArrived() {
+		display.showArrived();
+	}
 
 	public void showTimeLeft(int time) {
 		display.showTimeLeft(time);
 	}
-	
+
 	public void showTimeLeftMessage(String message) {
 		display.showTimeLeftMessage(message);
 	}

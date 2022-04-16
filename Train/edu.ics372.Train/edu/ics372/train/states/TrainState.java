@@ -22,4 +22,16 @@ public abstract class TrainState {
 	public void onStartTransport() {
 
 	}
+
+	public void onApproaching() {
+
+	}
+
+	public void onArrived() {
+
+	}
+
+	public void onObstruction() {
+
+	}
 }

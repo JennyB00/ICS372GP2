@@ -25,7 +25,7 @@ public class StoppedState extends RunningState implements Notifiable {
 
 	@Override
 	public void enter() {
-		// TODO show train stopped
+		TrainContext.instance().showArrived();
 		timer = new Timer(this, 1);
 	}
 

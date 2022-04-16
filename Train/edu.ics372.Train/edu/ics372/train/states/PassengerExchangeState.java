@@ -1,5 +1,6 @@
 package edu.ics372.train.states;
 
+import edu.ics372.train.states.doors.DoorOpeningState;
 import edu.ics372.train.states.doors.DoorState;
 
 /**
@@ -26,8 +27,8 @@ public class PassengerExchangeState extends TrainState {
 
 	@Override
 	public void enter() {// There needs to be an initial state for machine to work
-		// current = opening
-		// currentState.enter();
+		currentState = DoorOpeningState.instance();
+		currentState.enter();
 	}
 
 	@Override
@@ -39,6 +40,11 @@ public class PassengerExchangeState extends TrainState {
 	@Override
 	public void onStartTransport() {
 		TrainContext.instance().changeState(TransportState.instance());
+	}
+
+	@Override
+	public void onObstruction() {
+		currentState.onObstruction();
 	}
 
 	public void changeState(DoorState nextState) {
