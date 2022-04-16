@@ -91,4 +91,8 @@ public class TrainContext {
 	public void showTimeLeft(int time) {
 		display.showTimeLeft(time);
 	}
+	
+	public void showTimeLeftMessage(String message) {
+		display.showTimeLeftMessage(message);
+	}
 }

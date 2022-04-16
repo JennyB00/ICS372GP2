@@ -17,6 +17,8 @@ public interface TrainDisplay {
 	
 	public void showTimeLeft(int time);
 	
+	public void showTimeLeftMessage(String message);
+	
 	public void showAccelerating();
 	
 	public void showDecelerating();
