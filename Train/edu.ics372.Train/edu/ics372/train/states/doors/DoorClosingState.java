@@ -20,7 +20,7 @@ public class DoorClosingState extends DoorState {
 
 	@Override
 	public void onObstruction() {
-		DoorReOpeningState.setObstructionTime(timer.getTimeValue());
+		DoorReOpeningState.setObstructionTime(5 - timer.getTimeValue());
 		PassengerExchangeState.instance().changeState(DoorReOpeningState.instance());
 	}
 
