@@ -10,7 +10,7 @@ public interface Notifiable {
   /**
    * Process timer ticks
    */
-  public void OnTimerTick(int timerValue);
+  public void onTimerTick(int timerValue);
 
   /**
    * Process timer runs out event

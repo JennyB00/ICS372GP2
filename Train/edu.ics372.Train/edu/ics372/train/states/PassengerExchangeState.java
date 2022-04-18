@@ -1,6 +1,7 @@
 package edu.ics372.train.states;
 
-import edu.ics372.train.states.doors.DoorContext;
+import edu.ics372.train.states.doors.DoorOpeningState;
+import edu.ics372.train.states.doors.DoorState;
 
 /**
  * @author Jennifer Bruno
@@ -8,6 +9,7 @@ import edu.ics372.train.states.doors.DoorContext;
  */
 public class PassengerExchangeState extends TrainState {
 	private static PassengerExchangeState state;
+	private DoorState currentState;
 
 	/**
 	 * 
@@ -24,14 +26,15 @@ public class PassengerExchangeState extends TrainState {
 	}
 
 	@Override
-	public void enter() {
-		DoorContext.instance().initialize();
+	public void enter() {// There needs to be an initial state for machine to work
+		currentState = DoorOpeningState.instance();
+		currentState.enter();
 	}
 
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
-
+		currentState.leave();
+		currentState = null;
 	}
 
 	@Override
@@ -39,4 +42,14 @@ public class PassengerExchangeState extends TrainState {
 		TrainContext.instance().changeState(TransportState.instance());
 	}
 
+	@Override
+	public void onObstruction() {
+		currentState.onObstruction();
+	}
+
+	public void changeState(DoorState nextState) {
+		currentState.leave();
+		currentState = nextState;
+		currentState.enter();
+	}
 }

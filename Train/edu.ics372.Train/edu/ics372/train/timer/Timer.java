@@ -79,7 +79,7 @@ public class Timer implements PropertyChangeListener {
       client.onTimerRunsOut();
       Clock.getInstance().removePropertyChangeListener(this);
     } else {
-      client.OnTimerTick(timeValue);
+      client.onTimerTick(timeValue);
     }
   }
 }

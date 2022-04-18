@@ -4,30 +4,32 @@ import edu.ics372.train.states.PassengerExchangeState;
 import edu.ics372.train.states.TrainContext;
 import edu.ics372.train.timer.Timer;
 
-public class DoorClosingState extends DoorState {
-	private static DoorClosingState instance;
+public class DoorReOpenState extends DoorState {
+	private static DoorReOpenState instance;
 
-	private DoorClosingState() {
+	/**
+	 * 
+	 */
+	private DoorReOpenState() {
 		instance = this;
 	}
 
-	public static DoorClosingState instance() {
+	/**
+	 * 
+	 * 
+	 * @return the object
+	 */
+	public static DoorReOpenState instance() {
 		if (instance == null) {
-			instance = new DoorClosingState();
+			instance = new DoorReOpenState();
 		}
 		return instance;
 	}
 
 	@Override
-	public void onObstruction() {
-		DoorReOpeningState.setObstructionTime(5 - timer.getTimeValue());
-		PassengerExchangeState.instance().changeState(DoorReOpeningState.instance());
-	}
-
-	@Override
 	public void enter() {
-		timer = new Timer(this, 5);
-		TrainContext.instance().showDoorClosing();
+		timer = new Timer(this, 8);
+		TrainContext.instance().showDoorOpen();
 		TrainContext.instance().showTimeLeft(timer.getTimeValue());
 	}
 
@@ -35,6 +37,7 @@ public class DoorClosingState extends DoorState {
 	public void leave() {
 		timer.stop();
 		timer = null;
+		TrainContext.instance().showTimeLeft(0);
 	}
 
 	@Override
@@ -45,7 +48,7 @@ public class DoorClosingState extends DoorState {
 	@Override
 	public void onTimerRunsOut() {
 		TrainContext.instance().showTimeLeft(0);
-		PassengerExchangeState.instance().changeState(DoorClosedState.instance());
+		PassengerExchangeState.instance().changeState(DoorClosingState.instance());
 	}
 
 }

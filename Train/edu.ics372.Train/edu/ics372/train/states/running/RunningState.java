@@ -17,8 +17,4 @@ public abstract class RunningState {
 
 	}
 
-	public void onTimerRunsOut() {
-
-	}
-
 }

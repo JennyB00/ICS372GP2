@@ -6,7 +6,12 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JFLEX17">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JFLEX_17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFXLibrary">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
