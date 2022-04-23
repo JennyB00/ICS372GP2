@@ -3,7 +3,9 @@ package edu.ics372.train.display;
 /**
  * 
  * @author Arun Markandu
- *
+ * 
+ * This interface provide the APIs for the GUI class. 
+ * All these API methods should be implemented by the GUI class.
  */
 public interface TrainDisplay {
 	public void setStatusMessage(String message);

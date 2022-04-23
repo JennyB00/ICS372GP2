@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
  * 
  * @author Arun Markandu
  *
+ * Button class for Door Obstructing event.
+ * It implements the handle method.
  */
 public class DoorObstructingButton extends GUIButton {
 

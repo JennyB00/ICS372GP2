@@ -6,7 +6,9 @@ import javafx.event.ActionEvent;
 /**
  * 
  * @author Arun Markandu
- *
+ * 
+ * Button class for Station Reached event.
+ * It implements the handle method.
  */
 public class StationReachedButton extends GUIButton {
 
