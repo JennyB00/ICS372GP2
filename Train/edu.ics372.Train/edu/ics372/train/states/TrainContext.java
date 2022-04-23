@@ -122,8 +122,28 @@ public class TrainContext {
 	public void showTimeLeft(int time) {
 		display.showTimeLeft(time);
 	}
-
-	public void showTimeLeftMessage(String message) {
-		display.showTimeLeftMessage(message);
+	
+	public void showTimeLeftDoorOpening(int time) {
+		display.showTimeLeftDoorOpening(time);
+	}
+	
+	public void showTimeLeftDoorReOpening(int time) {
+		display.showTimeLeftDoorReOpening(time);
+	}
+	
+	public void showTimeLeftDoorClosing(int time) {
+		display.showTimeLeftDoorClosing(time);
+	}
+	
+	public void showTimeLeftApproaching(int time) {
+		display.showTimeLeftApproaching(time);
+	}
+	
+	public void showTimeLeftDoorAccelerating(int time) {
+		display.showTimeLeftAccelerating(time);
+	}
+	
+	public void showTimeLeftDecelerating(int time) {
+		display.showTimeLeftDecelerating(time);
 	}
 }

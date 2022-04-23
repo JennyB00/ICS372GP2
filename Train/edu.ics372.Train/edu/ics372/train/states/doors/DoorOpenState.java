@@ -30,7 +30,8 @@ public class DoorOpenState extends DoorState {
 	public void enter() {
 		timer = new Timer(this, 30);
 		TrainContext.instance().showDoorOpen();
-		TrainContext.instance().showTimeLeft(timer.getTimeValue());
+		//TrainContext.instance().showTimeLeft(timer.getTimeValue());
+		TrainContext.instance().showTimeLeftDoorOpening(timer.getTimeValue());
 	}
 
 	@Override
@@ -42,7 +43,8 @@ public class DoorOpenState extends DoorState {
 
 	@Override
 	public void onTimerTick(int timerValue) {
-		TrainContext.instance().showTimeLeft(timerValue);
+		//TrainContext.instance().showTimeLeft(timerValue);
+		TrainContext.instance().showTimeLeftDoorOpening(timerValue);
 	}
 
 	@Override

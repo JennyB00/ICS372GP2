@@ -20,6 +20,13 @@ import javafx.stage.WindowEvent;
  */
 
 public class GUIDisplay extends Application implements TrainDisplay {
+	
+	private final String TIMELEFT_ACCELERATING_MSG = "seconds left before constant speed";
+	private final String TIMELEFT_DEACCELERATING_MSG = "seconds left before stopping";
+	private final String TIMELEFT_DOOROPENING_MSG = "seconds left before opening";
+	private final String TIMELEFT_REDOOROPENING_MSG = "seconds left befor reopening";
+	private final String TIMELEFT_DOORCLOSING_MSG = "seconds left before closing";
+	private final String TIMELEFT_APPROACHING_MSG = "seconds left before aproaching";
 
 	private StationReachingButton stationReachingButton;
 	private StationReachedButton stationReachedButton;
@@ -40,7 +47,7 @@ public class GUIDisplay extends Application implements TrainDisplay {
 		statusField.setEditable(false);
 		timeField.setEditable(false);
 		statusField.setPrefSize(200, 5);
-		timeField.setPrefSize(200, 5);
+		timeField.setPrefSize(225, 5);
 		pane.add(statusField, 1, 0);
 		pane.add(timeField, 7, 0);
 
@@ -123,12 +130,6 @@ public class GUIDisplay extends Application implements TrainDisplay {
 	}
 
 	@Override
-	public void showTimeLeftMessage(String message) {
-		timeField.setText(message);
-
-	}
-
-	@Override
 	public void showDoorClosing() {
 		statusField.setText("Door Closing:Watch Out");
 	}
@@ -146,6 +147,54 @@ public class GUIDisplay extends Application implements TrainDisplay {
 	@Override
 	public void showDoorOpen() {
 		statusField.setText("Door Open");
+	}
+
+	@Override
+	public void showTimeLeftDoorOpening(int time) {
+		String message = String.valueOf(time);
+		message = message + " " + TIMELEFT_DOOROPENING_MSG;
+		timeField.setText(message);
+		
+	}
+
+	@Override
+	public void showTimeLeftDoorReOpening(int time) {
+		String message = String.valueOf(time);
+		message = message + " " + TIMELEFT_REDOOROPENING_MSG;
+		timeField.setText(message);
+		
+	}
+
+	@Override
+	public void showTimeLeftDoorClosing(int time) {
+		String message = String.valueOf(time);
+		message = message + " " + TIMELEFT_DOORCLOSING_MSG;
+		timeField.setText(message);
+		
+	}
+
+	@Override
+	public void showTimeLeftApproaching(int time) {
+		String message = String.valueOf(time);
+		message = message + " " + TIMELEFT_APPROACHING_MSG;
+		timeField.setText(message);
+		
+	}
+
+	@Override
+	public void showTimeLeftAccelerating(int time) {
+		String message = String.valueOf(time);
+		message = message + " " + TIMELEFT_ACCELERATING_MSG;
+		timeField.setText(message);
+		
+	}
+
+	@Override
+	public void showTimeLeftDecelerating(int time) {
+		String message = String.valueOf(time);
+		message = message + " " + TIMELEFT_DEACCELERATING_MSG;
+		timeField.setText(message);
+		
 	}
 
 }

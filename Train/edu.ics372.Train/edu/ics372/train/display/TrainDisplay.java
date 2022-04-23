@@ -16,8 +16,6 @@ public interface TrainDisplay {
 
 	public void showTimeLeft(int time);
 
-	public void showTimeLeftMessage(String message);
-
 	public void showAccelerating();
 
 	public void showDecelerating();
@@ -31,4 +29,16 @@ public interface TrainDisplay {
 	public void showDoorOpening();
 
 	public void showDoorOpen();
+	
+	public void showTimeLeftDoorOpening(int time);
+	
+	public void showTimeLeftDoorReOpening(int time);
+	
+	public void showTimeLeftDoorClosing(int time);
+	
+	public void showTimeLeftApproaching(int time);
+	
+	public void showTimeLeftAccelerating(int time);
+	
+	public void showTimeLeftDecelerating(int time);
 }
