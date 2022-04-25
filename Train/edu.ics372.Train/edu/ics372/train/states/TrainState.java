@@ -4,17 +4,7 @@ package edu.ics372.train.states;
  * @author Jennifer Bruno
  *
  */
-public abstract class TrainState {
-	/**
-	 * 
-	 */
-	public abstract void enter();
-
-	/**
-	 * 
-	 */
-	public abstract void leave();
-
+public abstract class TrainState extends State {
 	public void onExchangePassengers() {
 
 	}

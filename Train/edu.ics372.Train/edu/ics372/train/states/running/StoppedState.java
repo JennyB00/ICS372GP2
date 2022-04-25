@@ -27,6 +27,7 @@ public class StoppedState extends RunningState implements Notifiable {
 	public void enter() {
 		TrainContext.instance().showArrived();
 		timer = new Timer(this, 1);
+		TrainContext.instance().showTimeLeft(timer.getTimeValue());
 	}
 
 	@Override
@@ -37,12 +38,12 @@ public class StoppedState extends RunningState implements Notifiable {
 
 	@Override
 	public void onTimerTick(int timerValue) {
-		// TODO Auto-generated method stub
-
+		TrainContext.instance().showTimeLeft(timerValue);
 	}
 
 	@Override
 	public void onTimerRunsOut() {
+		TrainContext.instance().showTimeLeft(0);
 		TrainContext.instance().onExchangePassengers();
 	}
 

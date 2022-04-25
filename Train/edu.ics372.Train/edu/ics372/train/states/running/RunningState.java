@@ -1,14 +1,12 @@
 package edu.ics372.train.states.running;
 
+import edu.ics372.train.states.State;
+
 /**
  * @author Jennifer Bruno
  *
  */
-public abstract class RunningState {
-	public abstract void enter();
-
-	public abstract void leave();
-
+public abstract class RunningState extends State {
 	public void onApproaching() {
 
 	}

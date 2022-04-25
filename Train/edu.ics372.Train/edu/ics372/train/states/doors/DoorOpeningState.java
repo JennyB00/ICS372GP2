@@ -22,21 +22,18 @@ public class DoorOpeningState extends DoorState {
 	public void enter() {
 		timer = new Timer(this, 4);
 		TrainContext.instance().showDoorOpening();
-		//TrainContext.instance().showTimeLeft(timer.getTimeValue());
-		TrainContext.instance().showTimeLeftDoorOpening(timer.getTimeValue());
+		TrainContext.instance().showTimeLeft(timer.getTimeValue());
 	}
 
 	@Override
 	public void leave() {
 		timer.stop();
 		timer = null;
-		TrainContext.instance().showTimeLeft(0);
 	}
 
 	@Override
 	public void onTimerTick(int timerValue) {
-		//TrainContext.instance().showTimeLeft(timerValue);
-		TrainContext.instance().showTimeLeftDoorOpening(timerValue);
+		TrainContext.instance().showTimeLeft(timerValue);
 	}
 
 	@Override

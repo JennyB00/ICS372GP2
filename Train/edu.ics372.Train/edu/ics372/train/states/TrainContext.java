@@ -83,6 +83,22 @@ public class TrainContext {
 		this.currentState = currentState;
 	}
 
+	public void showAccelerating() {
+		display.showAccelerating();
+	}
+
+	public void showCruising() {
+		display.showConstantSpeed();
+	}
+
+	public void showDeaccelerating() {
+		display.showDecelerating();
+	}
+
+	public void showArrived() {
+		display.showArrived();
+	}
+
 	public void showDoorOpening() {
 		display.showDoorOpening();
 	}
@@ -103,47 +119,8 @@ public class TrainContext {
 		display.showDoorClosed();
 	}
 
-	public void showAccelerating() {
-		display.showAccelerating();
-	}
-
-	public void showDeaccelerating() {
-		display.showDecelerating();
-	}
-
-	public void showCruising() {
-		display.showConstantSpeed();
-	}
-
-	public void showArrived() {
-		display.showArrived();
-	}
-
 	public void showTimeLeft(int time) {
 		display.showTimeLeft(time);
 	}
-	
-	public void showTimeLeftDoorOpening(int time) {
-		display.showTimeLeftDoorOpening(time);
-	}
-	
-	public void showTimeLeftDoorReOpening(int time) {
-		display.showTimeLeftDoorReOpening(time);
-	}
-	
-	public void showTimeLeftDoorClosing(int time) {
-		display.showTimeLeftDoorClosing(time);
-	}
-	
-	public void showTimeLeftApproaching(int time) {
-		display.showTimeLeftApproaching(time);
-	}
-	
-	public void showTimeLeftDoorAccelerating(int time) {
-		display.showTimeLeftAccelerating(time);
-	}
-	
-	public void showTimeLeftDecelerating(int time) {
-		display.showTimeLeftDecelerating(time);
-	}
+
 }

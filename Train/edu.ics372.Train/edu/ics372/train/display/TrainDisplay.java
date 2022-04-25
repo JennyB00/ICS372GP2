@@ -4,43 +4,29 @@ package edu.ics372.train.display;
  * 
  * @author Arun Markandu
  * 
- * This interface provide the APIs for the GUI class. 
- * All these API methods should be implemented by the GUI class.
+ *         This interface provide the APIs for the GUI class. All these API
+ *         methods should be implemented by the GUI class.
  */
 public interface TrainDisplay {
 	public void setStatusMessage(String message);
-
-	public void showArrived();
-
-	public void showApproaching();
-
-	public void showDoorObstruction();
 
 	public void showTimeLeft(int time);
 
 	public void showAccelerating();
 
-	public void showDecelerating();
-
 	public void showConstantSpeed();
 
-	public void showDoorClosing();
+	public void showDecelerating();
 
-	public void showDoorClosed();
+	public void showArrived();
 
 	public void showDoorOpening();
 
 	public void showDoorOpen();
-	
-	public void showTimeLeftDoorOpening(int time);
-	
-	public void showTimeLeftDoorReOpening(int time);
-	
-	public void showTimeLeftDoorClosing(int time);
-	
-	public void showTimeLeftApproaching(int time);
-	
-	public void showTimeLeftAccelerating(int time);
-	
-	public void showTimeLeftDecelerating(int time);
+
+	public void showDoorClosing();
+
+	public void showDoorObstruction();
+
+	public void showDoorClosed();
 }

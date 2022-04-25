@@ -40,8 +40,7 @@ public class AcceleratingState extends RunningState implements Notifiable {
 	public void enter() {
 		timer = new Timer(this, 6);
 		TrainContext.instance().showAccelerating();
-		//TrainContext.instance().showTimeLeft(timer.getTimeValue());
-		TrainContext.instance().showTimeLeftDoorAccelerating(timer.getTimeValue());
+		TrainContext.instance().showTimeLeft(timer.getTimeValue());
 	}
 
 	@Override
@@ -52,8 +51,7 @@ public class AcceleratingState extends RunningState implements Notifiable {
 
 	@Override
 	public void onTimerTick(int timerValue) {
-		//TrainContext.instance().showTimeLeft(timerValue);
-		TrainContext.instance().showTimeLeftDoorAccelerating(timerValue);
+		TrainContext.instance().showTimeLeft(timerValue);
 	}
 
 	@Override

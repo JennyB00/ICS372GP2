@@ -28,7 +28,6 @@ public class DoorClosedState extends DoorState {
 	public void leave() {
 		timer.stop();
 		timer = null;
-		TrainContext.instance().showTimeLeft(0);
 	}
 
 	@Override
@@ -38,6 +37,7 @@ public class DoorClosedState extends DoorState {
 
 	@Override
 	public void onTimerRunsOut() {
+		TrainContext.instance().showTimeLeft(0);
 		TrainContext.instance().onStartTransport();
 	}
 }
