@@ -79,7 +79,7 @@ public class GUIDisplay extends Application implements TrainDisplay {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Train");
 		primaryStage.setHeight(200);
-		primaryStage.setWidth(800);
+		primaryStage.setWidth(900);
 
 		TrainContext.instance().setDisplay(this); // This will set the display object to the TrainContext
 		TrainContext.instance().initialize(); // Initialize the TrainContext
