@@ -4,13 +4,27 @@ import edu.ics372.train.states.PassengerExchangeState;
 import edu.ics372.train.states.TrainContext;
 import edu.ics372.train.timer.Timer;
 
+/**
+ * Represents the door closing state, listens for obstructions while closing
+ * 
+ * @author Jennifer Bruno
+ *
+ */
 public class DoorClosingState extends DoorState {
 	private static DoorClosingState instance;
 
+	/**
+	 * Private constructor for singleton
+	 */
 	private DoorClosingState() {
 		instance = this;
 	}
 
+	/**
+	 * Singleton instance
+	 * 
+	 * @return The single DoorClosingState instance
+	 */
 	public static DoorClosingState instance() {
 		if (instance == null) {
 			instance = new DoorClosingState();

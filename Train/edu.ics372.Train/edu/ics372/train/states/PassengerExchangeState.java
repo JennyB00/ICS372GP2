@@ -4,20 +4,26 @@ import edu.ics372.train.states.doors.DoorOpeningState;
 import edu.ics372.train.states.doors.DoorState;
 
 /**
+ * Represents the Passenger Exchange State
+ * 
  * @author Jennifer Bruno
- *
  */
 public class PassengerExchangeState extends TrainState {
 	private static PassengerExchangeState state;
 	private DoorState currentState;
 
 	/**
-	 * 
+	 * private constructor for singleton pattern
 	 */
 	private PassengerExchangeState() {
 
 	}
 
+	/**
+	 * singleton instance
+	 * 
+	 * @return the single PassengerExchangeState
+	 */
 	public static PassengerExchangeState instance() {
 		if (state == null) {
 			state = new PassengerExchangeState();
@@ -47,6 +53,11 @@ public class PassengerExchangeState extends TrainState {
 		currentState.onObstruction();
 	}
 
+	/**
+	 * Called from the states to change the current state
+	 * 
+	 * @param nextState The next state
+	 */
 	public void changeState(DoorState nextState) {
 		currentState.leave();
 		currentState = nextState;

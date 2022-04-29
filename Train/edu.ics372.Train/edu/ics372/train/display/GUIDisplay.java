@@ -60,9 +60,9 @@ public class GUIDisplay extends Application implements TrainDisplay {
 		pane.add(timeField, 7, 0);
 
 		// buttons
-		stationReachingButton = new StationReachingButton("Station Approaching");
-		stationReachedButton = new StationReachedButton("Station Arrived");
-		doorObstructingButton = new DoorObstructingButton("Door Obstruction");
+		stationReachingButton = new StationReachingButton();
+		stationReachedButton = new StationReachedButton();
+		doorObstructingButton = new DoorObstructingButton();
 
 		// Place the button on the grid
 		pane.add(stationReachingButton, 13, 0);
@@ -142,7 +142,7 @@ public class GUIDisplay extends Application implements TrainDisplay {
 	}
 
 	@Override
-	public void showDoorObstruction() {
+	public void showDoorReOpening() {
 		statusField.setText("Door Reopening");
 		timerDetails = TIMELEFT_DOOROBSTRUCTION_MSG;
 	}

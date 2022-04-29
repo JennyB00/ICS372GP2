@@ -4,22 +4,23 @@ import edu.ics372.train.states.TrainContext;
 import javafx.event.ActionEvent;
 
 /**
+ * Button class for Station Reached event. It implements the handle method.
  * 
  * @author Arun Markandu
  * 
- * Button class for Station Reached event.
- * It implements the handle method.
+ * 
  */
 public class StationReachedButton extends GUIButton {
 
-	public StationReachedButton(String string) {
-		super(string);
+	/**
+	 * Constructs a new button with the proper label
+	 */
+	public StationReachedButton() {
+		super("Station Arrived");
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
-//		TrainContext.instance().showDoorClosing();
-//		TrainContext.instance().showTimeLeft(6);
 		TrainContext.instance().onArrived();
 	}
 }

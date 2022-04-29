@@ -4,20 +4,26 @@ import edu.ics372.train.states.PassengerExchangeState;
 import edu.ics372.train.states.TrainContext;
 import edu.ics372.train.timer.Timer;
 
+/**
+ * Represents the door open state
+ * 
+ * @author Jennifer Bruno
+ *
+ */
 public class DoorOpenState extends DoorState {
 	private static DoorOpenState instance;
 
 	/**
-	 * 
+	 * Private constructor for singleton
 	 */
 	private DoorOpenState() {
 		instance = this;
 	}
 
 	/**
+	 * Singleton instance
 	 * 
-	 * 
-	 * @return the object
+	 * @return The single DoorOpenState instance
 	 */
 	public static DoorOpenState instance() {
 		if (instance == null) {

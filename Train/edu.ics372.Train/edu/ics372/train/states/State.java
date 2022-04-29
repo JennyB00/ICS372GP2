@@ -1,6 +1,8 @@
 package edu.ics372.train.states;
 
 /**
+ * Superclass for all states
+ * 
  * @author Jennifer Bruno
  *
  */

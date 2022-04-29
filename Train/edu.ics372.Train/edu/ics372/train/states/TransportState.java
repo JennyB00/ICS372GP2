@@ -4,6 +4,8 @@ import edu.ics372.train.states.running.AcceleratingState;
 import edu.ics372.train.states.running.RunningState;
 
 /**
+ * Represents the transport state
+ * 
  * @author Jennifer Bruno
  *
  */
@@ -12,11 +14,16 @@ public class TransportState extends TrainState {
 	private RunningState currentState;
 
 	/**
-	 * 
+	 * private constructor for singleton pattern
 	 */
 	private TransportState() {
 	}
 
+	/**
+	 * singleton instance
+	 * 
+	 * @return the single TransportState
+	 */
 	public static TransportState instance() {
 		if (state == null) {
 			state = new TransportState();
@@ -51,6 +58,11 @@ public class TransportState extends TrainState {
 		currentState.onArrived();
 	}
 
+	/**
+	 * Called from the states to change the current state
+	 * 
+	 * @param nextState The next state
+	 */
 	public void changeState(RunningState nextState) {
 		currentState.leave();
 		currentState = nextState;

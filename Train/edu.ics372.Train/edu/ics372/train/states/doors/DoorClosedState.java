@@ -3,13 +3,27 @@ package edu.ics372.train.states.doors;
 import edu.ics372.train.states.TrainContext;
 import edu.ics372.train.timer.Timer;
 
+/**
+ * Represents the door closed state
+ * 
+ * @author Jennifer Bruno
+ *
+ */
 public class DoorClosedState extends DoorState {
 	private static DoorClosedState instance;
 
+	/**
+	 * Private constructor for singleton
+	 */
 	private DoorClosedState() {
 		instance = this;
 	}
 
+	/**
+	 * Singleton instance
+	 * 
+	 * @return The single DoorClosedState instance
+	 */
 	public static DoorClosedState instance() {
 		if (instance == null) {
 			instance = new DoorClosedState();

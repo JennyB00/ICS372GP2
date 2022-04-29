@@ -4,22 +4,21 @@ import edu.ics372.train.states.TrainContext;
 import javafx.event.ActionEvent;
 
 /**
+ * Button class for Door Obstructing event. It implements the handle method.
  * 
  * @author Arun Markandu
- *
- * Button class for Door Obstructing event.
- * It implements the handle method.
  */
 public class DoorObstructingButton extends GUIButton {
 
-	public DoorObstructingButton(String string) {
-		super(string);
+	/**
+	 * Constructs a new button with the proper label
+	 */
+	public DoorObstructingButton() {
+		super("Door Obstruction");
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
-//		TrainContext.instance().showDoorReopening();
-//		TrainContext.instance().showTimeLeft(3);
 		TrainContext.instance().onObstruction();
 	}
 
